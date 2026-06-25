@@ -1,0 +1,62 @@
+theory:
+  classy:
+    input_params: ['H0', 'omega_b', 'omega_cdm']
+    output_params: ['theta_s_100', 'sigma8', 'Omega_m', 'age', 'rs_rec', 'da_rec']
+    path: /home/panda/class_monte/class_qtm
+    extra_args:
+      coupled_baryon_qtm: no
+      coupled_cdm_qtm: no
+
+likelihood:
+  bao.desi_2024_bao_all:
+  cmb_distance_prior.CMB_Distance_Prior_lcdm:
+    python_path: likelihood
+
+params:
+  # Standard Cosmological Parameters
+  H0:
+    prior: {min: 50, max: 90}
+    ref: {dist: norm, loc: 67.4, scale: 0.5}
+    proposal: 0.5
+    latex: H_0
+  omega_b:
+    prior: {min: 0.005, max: 0.05}
+    ref: {dist: norm, loc: 0.02239, scale: 0.00010}
+    proposal: 0.00010
+    latex: \Omega_b h^2
+  omega_cdm:
+    prior: {min: 0.05, max: 0.2}
+    ref: {dist: norm, loc: 0.12, scale: 0.005}
+    proposal: 0.005
+    latex: \Omega_c h^2
+
+  # Common Derived Parameters
+  theta_s_100:
+    derived: true
+    latex: 100\theta_{\rm s}
+  sigma8:
+    derived: true
+    latex: \sigma_8
+  Omega_m:
+    derived: true
+    latex: \Omega_{\rm m}
+  age:
+    derived: true
+    latex: \text{Age [Gyr]}
+  
+  # required for CMB distance prior
+  rs_rec:
+    derived: true
+    latex: r_s(z_{\rm rec}) \text{ [Mpc]}
+  da_rec:
+    derived: true
+    latex: d_A(z_{\rm rec}) \text{ [Mpc]}
+   
+sampler:
+  mcmc:
+    burn_in: 0
+    learn_proposal: true
+    max_tries: 1000
+    Rminus1_stop: 0.01
+
+output: chains/lcdm/DESI+CMB/lcdm_DESI+CMB

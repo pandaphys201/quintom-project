@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Ignore automation progress logs and job lock files
+logs/
+*.lock
+*.log
