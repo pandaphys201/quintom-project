@@ -1,34 +1,59 @@
 theory:
   classy:
-    input_params: ['H0', 'omega_b', 'omega_cdm']
-    output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8', 'Omega_m', 'age']
+    input_params:
+    - H0
+    - omega_b
+    - omega_cdm
+    output_params:
+    - comov.snd.hrz.
+    - ang.diam.dist.
+    - comov.dist.
+    - rs_rec
+    - da_rec
+    - theta_s_100
+    - sigma8
+    - Omega_m
+    - age
     path: /home/panda/class_monte/class_qtm
     extra_args:
-      coupled_baryon_qtm: no
-      coupled_cdm_qtm: no
+      coupled_baryon_qtm: false
+      coupled_cdm_qtm: false
       Neff: 3.044
       N_ncdm: 1
       m_ncdm: 0.06
-
 likelihood:
-  bao.desi_2024_bao_all:
+  bao.desi_2024_bao_all: null
   cmb_distance_prior.CMB_Distance_Prior_lcdm:
     python_path: likelihood/
-
 params:
   H0:
-    prior: {min: 50, max: 90}
-    ref: {dist: norm, loc: 67.4, scale: 0.5}
+    prior:
+      min: 50
+      max: 90
+    ref:
+      dist: norm
+      loc: 67.4
+      scale: 0.5
     proposal: 0.5
     latex: H_0
   omega_b:
-    prior: {min: 0.005, max: 0.05}
-    ref: {dist: norm, loc: 0.02239, scale: 0.00010}
-    proposal: 0.00010
+    prior:
+      min: 0.005
+      max: 0.05
+    ref:
+      dist: norm
+      loc: 0.02239
+      scale: 0.0001
+    proposal: 0.0001
     latex: \Omega_b h^2
   omega_cdm:
-    prior: {min: 0.05, max: 0.2}
-    ref: {dist: norm, loc: 0.12, scale: 0.005}
+    prior:
+      min: 0.05
+      max: 0.2
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.005
     proposal: 0.005
     latex: \Omega_c h^2
   theta_s_100:
@@ -49,12 +74,9 @@ params:
   da_rec:
     derived: true
     latex: d_A(z_{\rm rec}) \text{ [Mpc]}
-   
 sampler:
   mcmc:
     burn_in: 0
     learn_proposal: true
-    max_tries: .inf
     Rminus1_stop: 0.01
-
-output: chains/lcdm/DESI+CMB/lcdm_DESI+CMB
+output: lcdm_DESI+CMB

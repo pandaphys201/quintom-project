@@ -1,0 +1,126 @@
+theory:
+  classy:
+    input_params:
+    - H0
+    - omega_b
+    - Neff
+    - omega_cdm
+    - lambda_qtm
+    - delta_qtm
+    output_params:
+    - theta_s_100
+    - sigma8
+    - w_qtm
+    - Omega_qtm
+    - Omega_m
+    - age
+    path: /home/panda/class_monte/class_qtm
+    extra_args:
+      Omega_qtm: -1
+      Omega_Lambda: 0
+      Omega_fld: 0
+      coupled_baryon_qtm: true
+      coupled_cdm_qtm: true
+      output: ''
+      N_ncdm: 1
+      m_ncdm: 0.06
+likelihood:
+  bao.desi_2024_bao_all: null
+  gaussian_mixture:
+    means:
+    - 0.02196
+    - 2.904
+    covs:
+    - - 4.0311226e-07
+      - 7.30390042e-05
+    - - 7.30390042e-05
+      - 0.0452831584
+    input_params:
+    - omega_b
+    - Neff
+    output_params: []
+params:
+  H0:
+    prior:
+      min: 50
+      max: 90
+    ref:
+      dist: norm
+      loc: 67.4
+      scale: 0.5
+    proposal: 0.5
+    latex: H_0
+  omega_b:
+    prior:
+      min: 0.005
+      max: 0.05
+    ref:
+      dist: norm
+      loc: 0.02196
+      scale: 0.0001
+    proposal: 0.0001
+    latex: \Omega_b h^2
+  Neff:
+    prior:
+      min: 2.0
+      max: 4.0
+    ref:
+      dist: norm
+      loc: 2.904
+      scale: 0.1
+    proposal: 0.1
+    latex: N_{\rm eff}
+  omega_cdm:
+    prior:
+      min: 0.05
+      max: 0.2
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.005
+    proposal: 0.005
+    latex: \Omega_c h^2
+  lambda_qtm:
+    prior:
+      min: 0.0
+      max: 5.0
+    ref:
+      dist: norm
+      loc: 0.5
+      scale: 0.1
+    proposal: 0.1
+    latex: \lambda_{\rm qtm}
+  delta_qtm:
+    prior:
+      min: -1
+      max: 1
+    ref:
+      dist: norm
+      loc: 0.1
+      scale: 0.05
+    proposal: 0.05
+    latex: \delta_{\rm qtm}
+  theta_s_100:
+    derived: true
+    latex: 100\theta_{\rm s}
+  sigma8:
+    derived: true
+    latex: \sigma_8
+  Omega_m:
+    derived: true
+    latex: \Omega_{\rm m}
+  w_qtm:
+    derived: true
+    latex: w_{\rm qtm}
+  Omega_qtm:
+    derived: true
+    latex: \Omega_{\rm qtm}
+  age:
+    derived: true
+    latex: \text{Age [Gyr]}
+sampler:
+  mcmc:
+    burn_in: 0
+    learn_proposal: true
+    Rminus1_stop: 0.01
+output: quintom_DESI+BBN

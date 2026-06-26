@@ -81,6 +81,7 @@ sampler:
   mcmc:
     burn_in: 0
     learn_proposal: true
+    max_tries: .inf
     Rminus1_stop: 0.01
 
 output: chains/quintom/DESI+CMB+SNIa/quintom_DESI+CMB+SNIa
