@@ -1,6 +1,6 @@
 theory:
   classy:
-    input_params: ['H0', 'omega_b', 'N_eff', 'omega_cdm', 'lambda_qtm', 'delta_qtm']
+    input_params: ['H0', 'omega_b', 'Neff', 'omega_cdm', 'lambda_qtm', 'delta_qtm']
     output_params: ['theta_s_100', 'sigma8', 'w_qtm', 'Omega_qtm', 'Omega_m', 'age']
     path: /home/panda/class_monte/class_qtm
     extra_args:
@@ -18,7 +18,7 @@ likelihood:
   gaussian_mixture:
     means: [0.02196, 2.904]
     covs: [[4.03112260e-07, 7.30390042e-05], [7.30390042e-05, 4.52831584e-02]]
-    input_params: ['omega_b', 'N_eff']
+    input_params: ['omega_b', 'Neff']
     output_params: []
   sn.pantheonplus:
     use_abs_mag: True
@@ -34,7 +34,7 @@ params:
     ref: {dist: norm, loc: 0.02196, scale: 0.00010}
     proposal: 0.00010
     latex: \Omega_b h^2
-  N_eff:
+  Neff:
     prior: {min: 2.0, max: 4.0}
     ref: {dist: norm, loc: 2.904, scale: 0.1}
     proposal: 0.1

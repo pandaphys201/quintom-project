@@ -1,18 +1,20 @@
 theory:
   classy:
     input_params: ['H0', 'omega_b', 'omega_cdm']
-    output_params: ['theta_s_100', 'sigma8', 'Omega_m', 'age', 'rs_rec', 'da_rec']
+    output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8', 'Omega_m', 'age']
     path: /home/panda/class_monte/class_qtm
     extra_args:
       coupled_baryon_qtm: no
       coupled_cdm_qtm: no
+      Neff: 3.044
+      N_ncdm: 1
+      m_ncdm: 0.06
 
 likelihood:
   cmb_distance_prior.CMB_Distance_Prior_lcdm:
-    python_path: likelihood
+    python_path: likelihood/
 
 params:
-  # Standard Cosmological Parameters
   H0:
     prior: {min: 50, max: 90}
     ref: {dist: norm, loc: 67.4, scale: 0.5}
@@ -28,8 +30,6 @@ params:
     ref: {dist: norm, loc: 0.12, scale: 0.005}
     proposal: 0.005
     latex: \Omega_c h^2
-
-  # Common Derived Parameters
   theta_s_100:
     derived: true
     latex: 100\theta_{\rm s}
@@ -42,8 +42,6 @@ params:
   age:
     derived: true
     latex: \text{Age [Gyr]}
-  
-  # required for CMB distance prior
   rs_rec:
     derived: true
     latex: r_s(z_{\rm rec}) \text{ [Mpc]}
@@ -55,7 +53,6 @@ sampler:
   mcmc:
     burn_in: 0
     learn_proposal: true
-    max_tries: 1000
     Rminus1_stop: 0.01
 
 output: chains/lcdm/CMB/lcdm_CMB

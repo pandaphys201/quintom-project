@@ -10,7 +10,7 @@ theory:
       coupled_baryon_qtm: yes
       coupled_cdm_qtm: yes
       output: ''
-      N_eff: 3.044
+      Neff: 3.044
       N_ncdm: 1
       m_ncdm: 0.06
 

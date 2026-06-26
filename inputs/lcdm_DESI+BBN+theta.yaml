@@ -1,7 +1,7 @@
 theory:
   classy:
-    input_params: ['H0', 'omega_b', 'omega_cdm']
-    output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8', 'Omega_m', 'age']
+    input_params: ['theta_s_100', 'omega_b', 'omega_cdm']
+    output_params: ['H0', 'sigma8', 'Omega_m', 'age']
     path: /home/panda/class_monte/class_qtm
     extra_args:
       coupled_baryon_qtm: no
@@ -12,18 +12,16 @@ theory:
 
 likelihood:
   bao.desi_2024_bao_all:
-  cmb_distance_prior.CMB_Distance_Prior_lcdm:
-    python_path: likelihood/
 
 params:
-  H0:
-    prior: {min: 50, max: 90}
-    ref: {dist: norm, loc: 67.4, scale: 0.5}
-    proposal: 0.5
-    latex: H_0
+  theta_s_100:
+    prior: {dist: norm, loc: 1.04110, scale: 0.00053}
+    ref: {dist: norm, loc: 1.04110, scale: 0.00010}
+    proposal: 0.00010
+    latex: 100\theta_{\rm s}
   omega_b:
-    prior: {min: 0.005, max: 0.05}
-    ref: {dist: norm, loc: 0.02239, scale: 0.00010}
+    prior: {dist: norm, loc: 0.02218, scale: 0.00055}
+    ref: {dist: norm, loc: 0.02196, scale: 0.00010}
     proposal: 0.00010
     latex: \Omega_b h^2
   omega_cdm:
@@ -31,9 +29,9 @@ params:
     ref: {dist: norm, loc: 0.12, scale: 0.005}
     proposal: 0.005
     latex: \Omega_c h^2
-  theta_s_100:
+  H0:
     derived: true
-    latex: 100\theta_{\rm s}
+    latex: H_0
   sigma8:
     derived: true
     latex: \sigma_8
@@ -43,12 +41,6 @@ params:
   age:
     derived: true
     latex: \text{Age [Gyr]}
-  rs_rec:
-    derived: true
-    latex: r_s(z_{\rm rec}) \text{ [Mpc]}
-  da_rec:
-    derived: true
-    latex: d_A(z_{\rm rec}) \text{ [Mpc]}
    
 sampler:
   mcmc:
@@ -56,4 +48,4 @@ sampler:
     learn_proposal: true
     Rminus1_stop: 0.01
 
-output: chains/lcdm/DESI+CMB/lcdm_DESI+CMB
+output: chains/lcdm/DESI+BBN+theta/lcdm_DESI+BBN+theta
