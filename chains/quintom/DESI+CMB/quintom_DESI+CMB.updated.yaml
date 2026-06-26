@@ -175,7 +175,7 @@ sampler:
     sampler_type: mcmc
     supports_periodic_params: true
     burn_in: 0
-    max_tries: 40d
+    max_tries: .inf
     covmat: null
     covmat_params: null
     proposal_scale: 2.4
