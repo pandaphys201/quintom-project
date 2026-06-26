@@ -15,7 +15,7 @@ theory:
       m_ncdm: 0.06
 
 likelihood:
-  cmb_distance_prior.CMB_Distance_Prior.wcdm:
+  cmb_distance_prior.CMB_Distance_Prior_wcdm:
     python_path: likelihood/
 
 params:
