@@ -3,12 +3,16 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Ignore automation progress logs and job lock files
+# ignore automation progress logs and job lock files
 logs/*
 !logs/.gitkeep
 *.lock
 *.log
 
-# ingore all chain files
+# ignore all chain files
 chains/*
 !chains/.gitkeep
+
+# ignore all source files
+sources/*
+!sources/.gitkeep

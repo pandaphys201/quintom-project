@@ -1,0 +1,14 @@
+packages_path: sources/
+
+likelihood:
+  # low-l data
+  planck_2018_lowl.TT:
+  planck_2020_lollipop.lowlE:
+  planck_2020_lollipop.lowlB:
+  planck_2020_lollipop.lowlEB:
+
+  # high-l data
+  planck_2020_hillipop.TT:
+  planck_2020_hillipop.TE:
+  planck_2020_hillipop.EE:
+  planck_2020_hillipop.TTTEEE:
