@@ -15,22 +15,22 @@ find inputs/ -type f -name "*.yaml" | xargs -I {} -P 3 bash -c '
     lockfile="logs/${filename}.lock"
    
     if grep -q "\[STATUS: COMPLETED\]" "$logfile" 2>/dev/null; then
-        echo "DONE: ${filename}"
+        echo "\[DONE\]: ${filename}"
         exit 0
     fi
     (
         if flock -n 9; then
-            echo "STARTING / RESUMING: ${filename}"
+            echo "[STARTING | RESUMING]: ${filename}"
             mpirun -n 4 cobaya-run -r "{}" >> "$logfile" 2>&1
            
             if [ $? -eq 0 ]; then
                 echo "[STATUS: COMPLETED]" >> "$logfile"
-                echo "JUST FINISHED: ${filename}"
+                echo "[FINISHED]: ${filename}"
             else
-                echo "STOPPED / CRASHED: ${filename} (Check its log file)"
+                echo "[STOPPED | CRASHED]: ${filename} (Check its log file)"
             fi
         else
-            echo "CURRENTLY RUNNING: ${filename}"
+            echo "[RUNNING]: ${filename}"
         fi
     ) 9>> "$lockfile"
 '
