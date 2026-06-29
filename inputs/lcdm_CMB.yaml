@@ -2,7 +2,6 @@ theory:
   classy:
     input_params: ['H0', 'omega_b', 'omega_cdm']
     output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8', 'Omega_m', 'age']
-    path: ../class_qtm
     extra_args:
       coupled_baryon_qtm: no
       coupled_cdm_qtm: no

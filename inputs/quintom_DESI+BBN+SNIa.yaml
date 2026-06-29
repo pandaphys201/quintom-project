@@ -2,7 +2,6 @@ theory:
   classy:
     input_params: ['H0', 'omega_b', 'Neff', 'omega_cdm', 'lambda_qtm', 'delta_qtm']
     output_params: ['theta_s_100', 'sigma8', 'w_qtm', 'Omega_qtm', 'Omega_m', 'age']
-    path: ../class_qtm
     extra_args:
       Omega_qtm: -1
       Omega_Lambda: 0
