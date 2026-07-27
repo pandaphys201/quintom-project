@@ -20,7 +20,7 @@ likelihood:
     input_params: ['omega_b', 'Neff']
     output_params: []
   sn.pantheonplus:
-    use_abs_mag: True
+    use_abs_mag: False
 
 params:
   H0:
@@ -44,7 +44,7 @@ params:
     proposal: 0.005
     latex: \Omega_c h^2
   lambda_qtm:
-    prior: {min: 0.0, max: 5.0}
+    prior: {min: -2.0, max: 2.0}
     ref: {dist: norm, loc: 0.5, scale: 0.1}
     proposal: 0.1
     latex: \lambda_{\rm qtm}
@@ -53,11 +53,6 @@ params:
     ref: {dist: norm, loc: 0.1, scale: 0.05}
     proposal: 0.05
     latex: \delta_{\rm qtm}
-  Mb:
-    prior: {min: -20, max: -18}
-    ref: {dist: norm, loc: -19.253, scale: 0.01}
-    proposal: 0.01
-    latex: M_b
   theta_s_100:
     derived: true
     latex: 100\theta_{\rm s}
