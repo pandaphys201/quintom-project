@@ -16,3 +16,6 @@ chains/*
 # ignore all source files
 sources/*
 !sources/.gitkeep
+
+# HPC
+.slurm
