@@ -1,7 +1,7 @@
 theory:
   classy:
-    input_params: ['H0', 'omega_b', 'Neff', 'omega_cdm', 'lambda_qtm', 'delta_qtm']
-    output_params: ['theta_s_100', 'sigma8', 'w_qtm', 'Omega_qtm', 'Omega_m', 'age']
+    input_params: ['H0', 'omega_b', 'Neff', 'Omega_m', 'lambda_qtm', 'delta_qtm']
+    output_params: ['theta_s_100', 'sigma8', 'w_qtm', 'Omega_qtm', 'omega_cdm', 'age']
     extra_args:
       Omega_qtm: -1
       Omega_Lambda: 0
@@ -28,6 +28,11 @@ params:
     ref: {dist: norm, loc: 67.4, scale: 0.5}
     proposal: 0.5
     latex: H_0
+  Omega_m:
+    prior: {min: 0.1, max: 0.6}
+    ref: {dist: norm, loc: 0.3, scale: 0.01}
+    proposal: 0.01
+    latex: \Omega_{\rm m}
   omega_b:
     prior: {min: 0.005, max: 0.05}
     ref: {dist: norm, loc: 0.02196, scale: 0.00010}
@@ -38,21 +43,23 @@ params:
     ref: {dist: norm, loc: 2.904, scale: 0.1}
     proposal: 0.1
     latex: N_{\rm eff}
+  # Analytically calculate
   omega_cdm:
-    prior: {min: 0.05, max: 0.2}
-    ref: {dist: norm, loc: 0.12, scale: 0.005}
-    proposal: 0.005
+    value: 'lambda Omega_m, omega_b, H0: Omega_m * (H0 / 100)**2 - omega_b'
+    derived: true
     latex: \Omega_c h^2
   lambda_qtm:
-    prior: {min: -2.0, max: 2.0}
-    ref: {dist: norm, loc: 0.5, scale: 0.1}
-    proposal: 0.1
+    prior: {min: 0.0, max: 2.0}
+    ref: {dist: norm, loc: 0.5, scale: 0.05}
+    proposal: 0.05
     latex: \lambda_{\rm qtm}
   delta_qtm:
     prior: {min: -1, max: 1}
     ref: {dist: norm, loc: 0.1, scale: 0.05}
     proposal: 0.05
     latex: \delta_{\rm qtm}
+  
+  # Derived Paramter
   theta_s_100:
     derived: true
     latex: 100\theta_{\rm s}
