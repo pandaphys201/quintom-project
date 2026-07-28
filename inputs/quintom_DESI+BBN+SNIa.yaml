@@ -1,7 +1,7 @@
 theory:
   classy:
-    input_params: ['H0', 'omega_b', 'Neff', 'Omega_m', 'lambda_qtm', 'delta_qtm']
-    output_params: ['theta_s_100', 'sigma8', 'w_qtm', 'Omega_qtm', 'omega_cdm', 'age']
+    input_params: ['H0', 'omega_b', 'Neff', 'omega_cdm', 'lambda_qtm', 'delta_qtm']
+    output_params: ['theta_s_100', 'sigma8', 'w_qtm', 'Omega_qtm', 'age']
     extra_args:
       Omega_qtm: -1
       Omega_Lambda: 0
@@ -46,8 +46,6 @@ params:
   # Analytically calculate
   omega_cdm:
     value: 'lambda Omega_m, omega_b, H0: Omega_m * (H0 / 100)**2 - omega_b'
-    derived: true
-    latex: \Omega_c h^2
   lambda_qtm:
     prior: {min: 0.0, max: 2.0}
     ref: {dist: norm, loc: 0.5, scale: 0.05}
@@ -66,9 +64,6 @@ params:
   sigma8:
     derived: true
     latex: \sigma_8
-  Omega_m:
-    derived: true
-    latex: \Omega_{\rm m}
   w_qtm:
     derived: true
     latex: w_{\rm qtm}
