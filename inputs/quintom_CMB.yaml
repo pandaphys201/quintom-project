@@ -35,14 +35,16 @@ params:
     latex: \Omega_c h^2
   lambda_qtm:
     prior: {min: 0.0, max: 2.0}
-    ref: {dist: norm, loc: 0.5, scale: 0.05}
-    proposal: 0.01
+    ref: {dist: norm, loc: 0.1, scale: 0.05}
+    proposal: 0.05
     latex: \lambda_{\rm qtm}
   delta_qtm:
     prior: {min: -1, max: 1}
     ref: {dist: norm, loc: 0.1, scale: 0.01}
-    proposal: 0.005
+    proposal: 0.01
     latex: \delta_{\rm qtm}
+
+  # Derived Parmeters
   theta_s_100:
     derived: true
     latex: 100\theta_{\rm s}
