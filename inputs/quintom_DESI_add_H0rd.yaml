@@ -1,0 +1,22 @@
+output: chains/quintom/DESI/quintom_DESI
+post:
+  suffix: add_H0rd
+  add:
+    theory:
+      classy:
+        output_params: ['rs_d']
+        extra_args:
+          Omega_qtm: -1
+          Omega_Lambda: 0
+          Omega_fld: 0
+          coupled_baryon_qtm: yes
+          coupled_cdm_qtm: yes
+          output: ''
+          Neff: 3.044
+          N_ncdm: 1
+          m_ncdm: 0.06
+    params:
+      rs_d:
+      H0rd:
+        derived: 'lambda H0, rs_d: H0 * rs_d / 100'
+        latex: H_0 r_d [100 km s^{-1}]
