@@ -33,13 +33,13 @@ def run_minimizer(old_chain_root, yaml_config_path):
     # 5. Replace the 'mcmc' sampler with 'minimize'
     info['sampler'] = {
         'minimize': {
+            'method': 'scipy',
             'ignore_prior': False,      # False = Maximum Posterior, True = Maximum Likelihood
             'max_evals': 10000,         # Safety limit to prevent infinite loops
-            "confidence_for_unbounded": 0.9999999
         }
     }
 
-    info['debug'] = True  # Optional: Enable debug mode for more verbose output
+    # info['debug'] = True  # Optional: Enable debug mode for more verbose output
 
     chain_name = os.path.dirname(old_chain_root)
     info['output'] = f"{chain_name}/temp_minimizer"
@@ -82,4 +82,4 @@ if __name__ == "__main__":
     run_minimizer(old_chain_root=chains['quintom_DESI+CMB+SNIa+SH0ES'][0],
                   yaml_config_path=chains['quintom_DESI+CMB+SNIa+SH0ES'][1])
 
-    ## quintom_DESI+CMB+SNIa+SH0ES --> Segmentation fault (core dumped) 
+    ## quintom_DESI+CMB+SNIa+SH0ES --> Segmentation fault (core dumped) <-- solved by method 'scipy'
