@@ -18,7 +18,7 @@ likelihood:
   cmb_distance_prior.CMB_Distance_Prior_wcdm:
     python_path: likelihood/
   sn.pantheonplus:
-    use_abs_mag: true
+    use_abs_mag: false
 
 params:
   H0:
@@ -47,12 +47,6 @@ params:
     proposal: 0.05
     latex: \delta_{\rm qtm}
 
-  Mb:
-    prior: {min: -20, max: -18}
-    ref: {dist: norm, loc: -19.253, scale: 0.01}
-    proposal: 0.01
-    latex: M_b
-
   # Derived parameters
   theta_s_100:
     derived: true
@@ -69,9 +63,6 @@ params:
   Omega_qtm:
     derived: true
     latex: \Omega_{\rm qtm}
-  age:
-    derived: true
-    latex: \text{Age [Gyr]}
   rs_rec:
     derived: true
     latex: r_s(z_{\rm rec}) \text{ [Mpc]}
