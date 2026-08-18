@@ -12,9 +12,19 @@ def compute_dic(chain_prefix, burnin_fraction=0.3):
     
     samples = loadMCSamples(chain_prefix, settings={'ignore_rows': burnin_fraction})
     param_names = samples.getParamNames().list()
+
+    yaml_file = f"{chain_prefix}.updated.yaml"
+    print(f"Loading Cobaya model from: {yaml_file}")
     
-    chi2_cols = [name for name in param_names if name.startswith('chi2__')]
-    
+    with open(yaml_file, 'r') as f:
+        info = yaml_load(f)
+
+    likelihood_dict = info.get('likelihood', {})
+    expected_chi2_cols = [f"chi2__{name}" for name in likelihood_dict.keys()]
+
+    chi2_cols = [col for col in expected_chi2_cols if col in param_names]
+
+    print(f"Dynamically summing the following chi2 columns: {chi2_cols}")
     if chi2_cols:
         deviance_chain = np.zeros(samples.samples.shape[0])
         for col in chi2_cols:
@@ -32,12 +42,6 @@ def compute_dic(chain_prefix, burnin_fraction=0.3):
             deviance_chain = 2.0 * minuslogpost
             
     mean_deviance = np.average(deviance_chain, weights=samples.weights)
-    
-    yaml_file = f"{chain_prefix}.updated.yaml"
-    print(f"Loading Cobaya model from: {yaml_file}")
-    
-    with open(yaml_file, 'r') as f:
-        info = yaml_load(f)
     
     sampled_params = [p for p, p_info in info.get('params', {}).items() 
                       if isinstance(p_info, dict) and 'prior' in p_info]
