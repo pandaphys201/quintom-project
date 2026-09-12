@@ -1,7 +1,7 @@
 theory:
   classy:
-    input_params: ['H0', 'omega_b', 'omega_cdm']
-    output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8', 'Omega_m', 'age']
+    input_params: ['H0', 'Omega_m', 'omega_b']
+    output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8']
     extra_args:
       coupled_baryon_qtm: no
       coupled_cdm_qtm: no
@@ -10,43 +10,39 @@ theory:
       m_ncdm: 0.06
 
 likelihood:
-  cmb_distance_prior.CMB_Distance_Prior_lcdm:
+  cmb_distance_prior.CMB_Distance_Prior:
     python_path: likelihood/
 
 params:
   H0:
-    prior: {min: 50, max: 90}
+    prior: {min: 50, max: 100}
     ref: {dist: norm, loc: 67.4, scale: 0.5}
     proposal: 0.5
     latex: H_0
+  Omega_m:
+    prior: {min: 0.1, max: 0.6}
+    ref: {dist: norm, loc: 0.3, scale: 0.01}
+    proposal: 0.01
+    latex: \Omega_{\rm m}
   omega_b:
     prior: {min: 0.005, max: 0.05}
     ref: {dist: norm, loc: 0.02239, scale: 0.00010}
     proposal: 0.00010
-    latex: \Omega_b h^2
+    latex: \Omega_{\rm b} h^2
+
   omega_cdm:
-    prior: {min: 0.05, max: 0.2}
-    ref: {dist: norm, loc: 0.12, scale: 0.005}
-    proposal: 0.005
-    latex: \Omega_c h^2
+    value: 'lambda Omega_m, omega_b, H0: Omega_m * (H0 / 100)**2 - omega_b'
+    latex: \Omega_{\rm cdm} h^2
   theta_s_100:
     derived: true
     latex: 100\theta_{\rm s}
   sigma8:
     derived: true
     latex: \sigma_8
-  Omega_m:
-    derived: true
-    latex: \Omega_{\rm m}
-  age:
-    derived: true
-    latex: \text{Age [Gyr]}
   rs_rec:
-    derived: true
-    latex: r_s(z_{\rm rec}) \text{ [Mpc]}
+    drop: True
   da_rec:
-    derived: true
-    latex: d_A(z_{\rm rec}) \text{ [Mpc]}
+    drop: True
    
 sampler:
   mcmc:
