@@ -11,7 +11,7 @@ theory:
 
 likelihood:
   bao.desi_2024_bao_all:
-  cmb_distance_prior.CMB_Distance_Prior_lcdm:
+  cmb_distance_prior.CMB_Distance_Prior:
     python_path: likelihood/
   sn.pantheonplus:
     use_abs_mag: false
