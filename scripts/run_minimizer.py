@@ -33,7 +33,7 @@ def run_minimizer(old_chain_root, yaml_config_path):
     # 5. Replace the 'mcmc' sampler with 'minimize'
     info['sampler'] = {
         'minimize': {
-            'method': 'scipy',
+            #'method': 'scipy',
             'ignore_prior': False,      # False = Maximum Posterior, True = Maximum Likelihood
             'max_evals': 10000,         # Safety limit to prevent infinite loops
         }
@@ -71,15 +71,19 @@ def run_minimizer(old_chain_root, yaml_config_path):
 if __name__ == "__main__":
     chains = {}
     root = Path(r'/home/theppawan/cosmo-research/quintom-project')
-    chain_dir = root/'chains'
+    chain_dir = root/'chains'/'quintom'
     chain_prefixes = [p.with_suffix('') for p in chain_dir.rglob('*.checkpoint')]
 
     for prefix_path in chain_prefixes:
         chain_name = prefix_path.name
         model, dataset = chain_name.split("_", 1)
-        chains[chain_name] = [str(prefix_path), str(root/'inputs'/f'{chain_name}.yaml')]
+        chains[chain_name] = [str(prefix_path), str(prefix_path)+'.input.yaml']
 
-    run_minimizer(old_chain_root=chains['quintom_DESI+CMB+SNIa+SH0ES'][0],
-                  yaml_config_path=chains['quintom_DESI+CMB+SNIa+SH0ES'][1])
+    # for chain_name, (old_chain_root, yaml_config_path) in chains.items():
+    #     print(f"\nRunning minimizer for chain: {chain_name}")
+    #     run_minimizer(old_chain_root=old_chain_root, yaml_config_path=yaml_config_path)
+    run_minimizer(old_chain_root=chains['quintom_DESI'][0], yaml_config_path=chains['quintom_DESI'][1])
+
 
     ## quintom_DESI+CMB+SNIa+SH0ES --> Segmentation fault (core dumped) <-- solved by method 'scipy'
+    ## quintom_DESI+CMB+SNIa       --> Segmentation fault (core dumped) <-- solved by method 'scipy'
