@@ -1,0 +1,22 @@
+ -log(Like) = 708.9240816588458
+  chi-sq    = 1417.8481633176916
+
+    1  65.780317         H0                                            H_0
+    2  2.240131300e-02   omega_b                                       \Omega_b h^2
+    3  0.11243654        omega_cdm                                     \Omega_c h^2
+    4  0.66766406        lambda_qtm                                    \lambda_{\rm qtm}
+    5  -5.811366500e-02  delta_qtm                                     \delta_{\rm qtm}
+
+
+    6  1.042127973e+00   theta_s_100                                   100\theta_{\rm s}
+    7  7.302678551e-01   sigma8                                        \sigma_8
+    8  3.131047819e-01   Omega_m                                       \Omega_{\rm m}
+    9  -9.343538825e-01  w_qtm                                         w_{\rm qtm}
+   10  6.868116002e-01   Omega_qtm                                     \Omega_{\rm qtm}
+   11  1.487823541e+02   rs_rec                                        r_s(z_{\rm rec}) \text{ [Mpc]}
+   12  1.311241754e+01   da_rec                                        d_A(z_{\rm rec}) \text{ [Mpc]}
+   13  1.331041622e+01   chi2__BAO                                     \chi^2_\mathrm{BAO}
+   14  1.402533265e+03   chi2__SN                                      \chi^2_\mathrm{SN}
+   15  1.331041622e+01   chi2__bao.desi_2024_bao_all                   \chi^2_{\rm bao.desi\ 2024\ bao\ all}
+   16  1.797815445e-02   chi2__cmb_distance_prior.CMB_Distance_Prior   \chi^2_{\rm cmb\ distance\ prior.CMB\ Distance\ Prior}
+   17  1.402533265e+03   chi2__sn.pantheonplus                         \chi^2_{\rm sn.pantheonplus}

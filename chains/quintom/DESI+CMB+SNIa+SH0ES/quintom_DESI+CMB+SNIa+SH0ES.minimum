@@ -1,0 +1,24 @@
+ -log(Like) = 753.3830130982655
+  chi-sq    = 1506.766026196531
+
+    1  68.736147         H0                                                 H_0
+    2  2.269253700e-02   omega_b                                            \Omega_b h^2
+    3  0.11758527        omega_cdm                                          \Omega_c h^2
+    4  5.259668300e-02   lambda_qtm                                         \lambda_{\rm qtm}
+    5  -1.302946700e-04  delta_qtm                                          \delta_{\rm qtm}
+    6  -19.398936        Mb                                                 M_b
+
+
+    7  1.042612899e+00   theta_s_100                                        100\theta_{\rm s}
+    8  8.024653221e-01   sigma8                                             \sigma_8
+    9  2.982690959e-01   Omega_m                                            \Omega_{\rm m}
+   10  -9.995761777e-01  w_qtm                                              w_{\rm qtm}
+   11  7.016542855e-01   Omega_qtm                                          \Omega_{\rm qtm}
+   12  1.373123931e+01   age                                                \text{Age [Gyr]}
+   13  1.449133976e+02   rs_rec                                             r_s(z_{\rm rec}) \text{ [Mpc]}
+   14  1.276010863e+01   da_rec                                             d_A(z_{\rm rec}) \text{ [Mpc]}
+   15  1.312209234e+01   chi2__BAO                                          \chi^2_\mathrm{BAO}
+   16  1.482450261e+03   chi2__SN                                           \chi^2_\mathrm{SN}
+   17  1.312209234e+01   chi2__bao.desi_2024_bao_all                        \chi^2_{\rm bao.desi\ 2024\ bao\ all}
+   18  7.820875242e+00   chi2__cmb_distance_prior.CMB_Distance_Prior        \chi^2_{\rm cmb\ distance\ prior.CMB\ Distance\ Prior}
+   19  1.482450261e+03   chi2__sn.pantheonplusshoes                         \chi^2_{\rm sn.pantheonplusshoes}

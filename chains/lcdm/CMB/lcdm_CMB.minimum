@@ -1,0 +1,15 @@
+ -log(Like) = -1.3041716504227203
+  chi-sq    = -2.6083433008454406
+
+    1  6.683390527e+01   H0                                                 H_0
+    2  2.235133362e-02   omega_b                                            \Omega_b h^2
+    3  1.215951650e-01   omega_cdm                                          \Omega_c h^2
+
+
+    4  1.042063753e+00   theta_s_100                                        100\theta_{\rm s}
+    5  8.168895252e-01   sigma8                                             \sigma_8
+    6  3.237028224e-01   Omega_m                                            \Omega_{\rm m}
+    7  1.380158980e+01   age                                                \text{Age [Gyr]}
+    8  1.441480519e+02   rs_rec                                             r_s(z_{\rm rec}) \text{ [Mpc]}
+    9  1.269173280e+01   da_rec                                             d_A(z_{\rm rec}) \text{ [Mpc]}
+   10  1.032333912e-02   chi2__cmb_distance_prior.CMB_Distance_Prior        \chi^2_{\rm cmb\ distance\ prior.CMB\ Distance\ Prior}

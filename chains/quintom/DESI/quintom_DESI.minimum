@@ -1,0 +1,18 @@
+ -log(Like) = 7.263987261262348
+  chi-sq    = 14.527974522524696
+
+    1  6.709479196e+01   H0                            H_0
+    2  2.209767526e-02   omega_b                       \Omega_b h^2
+    3  1.118430057e-01   omega_cdm                     \Omega_c h^2
+    4  7.130246646e-01   lambda_qtm                    \lambda_{\rm qtm}
+    5  9.210247805e-03   delta_qtm                     \delta_{\rm qtm}
+
+
+    6  1.037676467e+00   theta_s_100                   100\theta_{\rm s}
+    7  7.688149689e-01   sigma8                        \sigma_8
+    8  2.989637233e-01   Omega_m                       \Omega_{\rm m}
+    9  -9.212739585e-01  w_qtm                         w_{\rm qtm}
+   10  7.009558932e-01   Omega_qtm                     \Omega_{\rm qtm}
+   11  1.394244241e+01   age                           \text{Age [Gyr]}
+   12  1.254147098e+01   chi2__BAO                     \chi^2_\mathrm{BAO}
+   13  1.254147098e+01   chi2__bao.desi_2024_bao_all   \chi^2_{\rm bao.desi\ 2024\ bao\ all}

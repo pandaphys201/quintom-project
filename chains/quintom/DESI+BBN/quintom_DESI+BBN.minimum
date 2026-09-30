@@ -1,0 +1,20 @@
+ -log(Like) = 0.7175799167420709
+  chi-sq    = 1.4351598334841418
+
+    1  6.610846149e+01   H0                            H_0
+    2  2.191013594e-02   omega_b                       \Omega_b h^2
+    3  2.881048733e+00   Neff                          N_{\rm eff}
+    4  1.081841872e-01   omega_cdm                     \Omega_c h^2
+    5  7.431062277e-01   lambda_qtm                    \lambda_{\rm qtm}
+    6  -6.583256816e-03  delta_qtm                     \delta_{\rm qtm}
+
+
+    7  1.037107598e+00   theta_s_100                   100\theta_{\rm s}
+    8  7.605186504e-01   sigma8                        \sigma_8
+    9  2.991501998e-01   Omega_m                       \Omega_{\rm m}
+   10  -9.144146217e-01  w_qtm                         w_{\rm qtm}
+   11  7.007690856e-01   Omega_qtm                     \Omega_{\rm qtm}
+   12  1.413690578e+01   age                           \text{Age [Gyr]}
+   13  1.253892491e+01   chi2__BAO                     \chi^2_\mathrm{BAO}
+   14  1.253892491e+01   chi2__bao.desi_2024_bao_all   \chi^2_{\rm bao.desi\ 2024\ bao\ all}
+   15  -1.447656298e+01  chi2__gaussian_mixture        \chi^2_{\rm gaussian\ mixture}
