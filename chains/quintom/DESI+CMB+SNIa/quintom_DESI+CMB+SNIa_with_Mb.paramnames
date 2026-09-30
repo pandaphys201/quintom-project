@@ -1,0 +1,19 @@
+H0	H_0
+omega_b	\Omega_b h^2
+omega_cdm	\Omega_c h^2
+lambda_qtm	\lambda_{\rm qtm}
+delta_qtm	\delta_{\rm qtm}
+theta_s_100*	100\theta_{\rm s}
+sigma8*	\sigma_8
+Omega_m*	\Omega_{\rm m}
+w_qtm*	w_{\rm qtm}
+Omega_qtm*	\Omega_{\rm qtm}
+rs_rec*	r_s(z_{\rm rec}) \text{ [Mpc]}
+da_rec*	d_A(z_{\rm rec}) \text{ [Mpc]}
+chi2__BAO*	\chi^2_\mathrm{BAO}
+chi2__SN*	\chi^2_\mathrm{SN}
+chi2*	\chi^2
+chi2__bao.desi_2024_bao_all*	\chi^2_\mathrm{bao.desi\ 2024\ bao\ all}
+chi2__cmb_distance_prior.CMB_Distance_Prior*	\chi^2_\mathrm{cmb\ distance\ prior.CMB\ Distance\ Prior}
+chi2__sn.pantheonplus*	\chi^2_\mathrm{sn.pantheonplus}
+Mb*	M_b

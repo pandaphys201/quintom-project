@@ -1,0 +1,19 @@
+H0	H_0
+omega_b	\Omega_b h^2
+Neff	N_{\rm eff}
+omega_cdm	\Omega_c h^2
+lambda_qtm	\lambda_{\rm qtm}
+delta_qtm	\delta_{\rm qtm}
+Omega_m*	\Omega_{\rm m}
+theta_s_100*	100\theta_{\rm s}
+sigma8*	\sigma_8
+w_qtm*	w_{\rm qtm}
+Omega_qtm*	\Omega_{\rm qtm}
+age*	\text{Age [Gyr]}
+chi2__BAO*	\chi^2_\mathrm{BAO}
+chi2__SN*	\chi^2_\mathrm{SN}
+chi2*	\chi^2
+chi2__bao.desi_2024_bao_all*	\chi^2_\mathrm{bao.desi\ 2024\ bao\ all}
+chi2__gaussian_mixture*	\chi^2_\mathrm{gaussian\ mixture}
+chi2__sn.pantheonplus*	\chi^2_\mathrm{sn.pantheonplus}
+Mb*	M_b
