@@ -9,10 +9,6 @@ logs/*
 *.lock
 *.log
 
-# ignore all chain files
-chains/*
-!chains/.gitkeep
-
 # ignore all source files
 sources/*
 !sources/.gitkeep
