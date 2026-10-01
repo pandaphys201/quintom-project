@@ -1,7 +1,7 @@
 theory:
   classy:
     input_params: ['H0', 'omega_b', 'omega_cdm']
-    output_params: ['comov.snd.hrz.', 'ang.diam.dist.', 'comov.dist.', 'rs_rec', 'da_rec', 'theta_s_100', 'sigma8', 'Omega_m', 'age']
+    output_params: ['theta_s_100', 'sigma8', 'Omega_m']
     extra_args:
       coupled_baryon_qtm: no
       coupled_cdm_qtm: no
@@ -11,10 +11,8 @@ theory:
 
 likelihood:
   bao.desi_2024_bao_all:
-  cmb_distance_prior.CMB_Distance_Prior:
-    python_path: likelihood/
-  sn.pantheonplus:
-    use_abs_mag: false
+  sn.pantheonplusshoes:
+    use_abs_mag: True
 
 params:
   H0:
@@ -23,8 +21,8 @@ params:
     proposal: 0.5
     latex: H_0
   omega_b:
-    prior: {min: 0.005, max: 0.05}
-    ref: {dist: norm, loc: 0.02239, scale: 0.00010}
+    prior: {dist: norm, loc: 0.02218, scale: 0.00055}
+    ref: {dist: norm, loc: 0.02196, scale: 0.00010}
     proposal: 0.00010
     latex: \Omega_b h^2
   omega_cdm:
@@ -32,6 +30,11 @@ params:
     ref: {dist: norm, loc: 0.12, scale: 0.005}
     proposal: 0.005
     latex: \Omega_c h^2
+  Mb:
+    prior: {min: -20, max: -18}
+    ref: {dist: norm, loc: -19.253, scale: 0.01}
+    proposal: 0.01
+    latex: M_b
   theta_s_100:
     derived: true
     latex: 100\theta_{\rm s}
@@ -41,13 +44,7 @@ params:
   Omega_m:
     derived: true
     latex: \Omega_{\rm m}
-  rs_rec:
-    derived: true
-    latex: r_s(z_{\rm rec}) \text{ [Mpc]}
-  da_rec:
-    derived: true
-    latex: d_A(z_{\rm rec}) \text{ [Mpc]}
-   
+
 sampler:
   mcmc:
     burn_in: 0
@@ -55,4 +52,4 @@ sampler:
     max_tries: .inf
     Rminus1_stop: 0.01
 
-output: chains/lcdm/DESI+CMB+SNIa/lcdm_DESI+CMB+SNIa
+output: chains/lcdm/DESI+BBN+SNIa+SH0ES/lcdm_DESI+BBN+SNIa+SH0ES
