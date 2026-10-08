@@ -82,7 +82,7 @@ if __name__ == "__main__":
     # for chain_name, (old_chain_root, yaml_config_path) in chains.items():
     #     print(f"\nRunning minimizer for chain: {chain_name}")
     #     run_minimizer(old_chain_root=old_chain_root, yaml_config_path=yaml_config_path)
-    run_minimizer(old_chain_root=chains['quintom_DESI'][0], yaml_config_path=chains['quintom_DESI'][1])
+    run_minimizer(old_chain_root=chains['quintom_DESI+CMB'][0], yaml_config_path=chains['quintom_DESI+CMB'][1])
 
 
     ## quintom_DESI+CMB+SNIa+SH0ES --> Segmentation fault (core dumped) <-- solved by method 'scipy'

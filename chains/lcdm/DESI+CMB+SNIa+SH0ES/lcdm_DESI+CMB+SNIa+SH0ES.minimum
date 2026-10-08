@@ -1,0 +1,19 @@
+ -log(Like) = 751.0755069463893
+  chi-sq    = 1502.1510138927786
+
+    1  68.742212         H0                                            H_0
+    2  2.268687200e-02   omega_b                                       \Omega_b h^2
+    3  0.11753144        omega_cdm                                     \Omega_c h^2
+    4  -19.398896        Mb                                            M_b
+
+
+    5  1.042564696e+00   theta_s_100                                   100\theta_{\rm s}
+    6  8.023154320e-01   sigma8                                        \sigma_8
+    7  2.980905618e-01   Omega_m                                       \Omega_{\rm m}
+    8  1.449318015e+02   rs_rec                                        r_s(z_{\rm rec}) \text{ [Mpc]}
+    9  1.276229321e+01   da_rec                                        d_A(z_{\rm rec}) \text{ [Mpc]}
+   10  1.310995932e+01   chi2__BAO                                     \chi^2_\mathrm{BAO}
+   11  1.482484751e+03   chi2__SN                                      \chi^2_\mathrm{SN}
+   12  1.310995932e+01   chi2__bao.desi_2024_bao_all                   \chi^2_{\rm bao.desi\ 2024\ bao\ all}
+   13  7.788676031e+00   chi2__cmb_distance_prior.CMB_Distance_Prior   \chi^2_{\rm cmb\ distance\ prior.CMB\ Distance\ Prior}
+   14  1.482484751e+03   chi2__sn.pantheonplusshoes                    \chi^2_{\rm sn.pantheonplusshoes}

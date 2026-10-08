@@ -1,21 +1,21 @@
  -log(Like) = 6.60623493728793
   chi-sq    = 13.21246987457586
 
-    1  6.699289294e+01   H0                                                 H_0
-    2  2.240046258e-02   omega_b                                            \Omega_b h^2
-    3  1.133258444e-01   omega_cdm                                          \Omega_c h^2
-    4  9.889060069e-03   lambda_qtm                                         \lambda_{\rm qtm}
-    5  5.479335277e-02   delta_qtm                                          \delta_{\rm qtm}
+    1  6.699289294e+01   H0                                            H_0
+    2  2.240046258e-02   omega_b                                       \Omega_b h^2
+    3  1.133258444e-01   omega_cdm                                     \Omega_c h^2
+    4  9.889060069e-03   lambda_qtm                                    \lambda_{\rm qtm}
+    5  5.479335277e-02   delta_qtm                                     \delta_{\rm qtm}
 
 
-    6  1.042135633e+00   theta_s_100                                        100\theta_{\rm s}
-    7  7.462051217e-01   sigma8                                             \sigma_8
-    8  3.038524836e-01   Omega_m                                            \Omega_{\rm m}
-    9  -1.001073498e+00  w_qtm                                              w_{\rm qtm}
-   10  6.960668585e-01   Omega_qtm                                          \Omega_{\rm qtm}
-   11  1.404481499e+01   age                                                \text{Age [Gyr]}
-   12  1.482955032e+02   rs_rec                                             r_s(z_{\rm rec}) \text{ [Mpc]}
-   13  1.306811725e+01   da_rec                                             d_A(z_{\rm rec}) \text{ [Mpc]}
-   14  1.304136442e+01   chi2__BAO                                          \chi^2_\mathrm{BAO}
-   15  1.304136442e+01   chi2__bao.desi_2024_bao_all                        \chi^2_{\rm bao.desi\ 2024\ bao\ all}
-   16  1.718336733e-02   chi2__cmb_distance_prior.CMB_Distance_Prior        \chi^2_{\rm cmb\ distance\ prior.CMB\ Distance\ Prior}
+    6  1.042135633e+00   theta_s_100                                   100\theta_{\rm s}
+    7  7.462051217e-01   sigma8                                        \sigma_8
+    8  3.038524836e-01   Omega_m                                       \Omega_{\rm m}
+    9  -1.001073498e+00  w_qtm                                         w_{\rm qtm}
+   10  6.960668585e-01   Omega_qtm                                     \Omega_{\rm qtm}
+   11  1.404481499e+01   age                                           \text{Age [Gyr]}
+   12  1.482955032e+02   rs_rec                                        r_s(z_{\rm rec}) \text{ [Mpc]}
+   13  1.306811725e+01   da_rec                                        d_A(z_{\rm rec}) \text{ [Mpc]}
+   14  1.304136442e+01   chi2__BAO                                     \chi^2_\mathrm{BAO}
+   15  1.304136442e+01   chi2__bao.desi_2024_bao_all                   \chi^2_{\rm bao.desi\ 2024\ bao\ all}
+   16  1.718336733e-02   chi2__cmb_distance_prior.CMB_Distance_Prior   \chi^2_{\rm cmb\ distance\ prior.CMB\ Distance\ Prior}
