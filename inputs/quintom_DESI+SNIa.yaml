@@ -1,7 +1,7 @@
 theory:
   classy:
     input_params: ['H0', 'omega_b', 'omega_cdm', 'lambda_qtm', 'delta_qtm']
-    output_params: ['rs_d', 'Omega_m', 'w_qtm', 'Omega_qtm', 'age']
+    output_params: ['Omega_m', 'w_qtm', 'Omega_qtm']
     extra_args:
       Omega_qtm: -1
       Omega_Lambda: 0
@@ -16,55 +16,49 @@ theory:
 likelihood:
   bao.desi_2024_bao_all:
   sn.pantheonplus:
-    use_abs_mag: False  # Set to False to analytically marginalize Mb
+    use_abs_mag: False
 
 params:
-  # 1. Freeze H0 to break the infinite degeneracy valley
-  H0: 70.0
-
-  # 2. Sample Omega_m directly
-  Omega_m:
-    prior: {min: 0.1, max: 0.6}
-    ref: {dist: norm, loc: 0.3, scale: 0.01}
-    proposal: 0.01
-    latex: \Omega_{\rm m}
-
-  # 3. Wide omega_b to act as a free dial for r_d
+  H0:
+    prior: {min: 50, max: 90}
+    ref: {dist: norm, loc: 67.4, scale: 0.5}
+    proposal: 0.5
+    latex: H_0
   omega_b:
-    prior: {min: 0.005, max: 0.1}
-    ref: {dist: norm, loc: 0.022, scale: 0.005}
-    proposal: 0.005
-    latex: \omega_b
-
-  # 4. Analytically calculate omega_cdm to feed back to Classy
+    prior: {min: 0.005, max: 0.05}
+    ref: {dist: norm, loc: 0.02196, scale: 0.00010}
+    proposal: 0.00010
+    latex: \Omega_b h^2
   omega_cdm:
-    value: 'lambda Omega_m, omega_b, H0: Omega_m * (H0 / 100)**2 - omega_b'
-
-  # 5. Your Quintom parameters
+    prior: {min: 0.05, max: 0.2}
+    ref: {dist: norm, loc: 0.12, scale: 0.005}
+    proposal: 0.005
+    latex: \Omega_c h^2
   lambda_qtm:
     prior: {min: 0.0, max: 5.0}
     ref: {dist: norm, loc: 0.5, scale: 0.1}
     proposal: 0.1
     latex: \lambda_{\rm qtm}
   delta_qtm:
-    prior: {min: -1.0, max: 1.0}
+    prior: {min: -1, max: 1}
     ref: {dist: norm, loc: 0.1, scale: 0.05}
     proposal: 0.05
     latex: \delta_{\rm qtm}
-
-  # 6. Derived parameters to output
-  rs_d:
+  theta_s_100:
     derived: true
-    latex: r_d
+    latex: 100\theta_{\rm s}
+  sigma8:
+    derived: true
+    latex: \sigma_8
+  Omega_m:
+    derived: true
+    latex: \Omega_{\rm m}
   w_qtm:
     derived: true
     latex: w_{\rm qtm}
   Omega_qtm:
     derived: true
     latex: \Omega_{\rm qtm}
-  age:
-    derived: true
-    latex: \text{Age [Gyr]}
 
 sampler:
   mcmc:
